@@ -1,0 +1,236 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --coklat: #472b13;
+  --bg: #d2cec9;
+  --putih: #ffffff;
+  --hitam: #101010;
+}
+
+body {
+  background-color: var(--bg);
+}
+
+/* Navbar */
+nav.navbar {
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 10em;
+  color: var(--putih);
+  font-family: Pacifico;
+  width: 100%;
+  z-index: 999;
+  /* background-color: var(--coklat); */
+}
+nav.navbar h3 {
+  font-size: 26px;
+  line-height: normal;
+  font-weight: 400;
+}
+nav.navbar .menu {
+  display: flex;
+  align-items: center;
+  gap: 3em;
+}
+nav.navbar .menu i {
+  font-size: 1.5em;
+  display: none;
+}
+nav.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 2em;
+}
+nav.navbar ul li {
+  position: relative;
+}
+nav.navbar ul li a {
+  color: var(--coklat);
+  text-decoration: none;
+  font-size: 20px;
+}
+nav.navbar ul li a:hover {
+  -webkit-text-stroke: 1px var(--coklat);
+}
+
+/* Beranda */
+#beranda {
+  position: relative;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  width: 100%;
+  height: 100vh;
+}
+
+#beranda .panel-kiri {
+  background-color: var(--coklat);
+  color: var(--putih);
+  padding: 0 6em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3em;
+  height: 100vh;
+}
+#beranda .panel-kiri h1 {
+  font-family: Pacifico;
+  font-size: 7em;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: var(--coklat);
+  /* -webkit-text-stroke: 1px var(--putih); */
+  text-shadow: -1px -1px 0 var(--putih), 1px -1px var(--putih), -1px 1px var(--putih), 1px 1px var(--putih);
+}
+#beranda .panel-kiri p {
+  color: var(--putih);
+  text-align: center;
+  font-family: Caveat;
+  font-size: 1.5em;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+#beranda .panel-kiri button {
+  padding: 0.5em 1.5em;
+  font-size: 1.2em;
+  border: 3px solid var(--putih);
+  background-color: transparent;
+  color: var(--putih);
+  font-family: Caveat;
+  transition: 0.4s;
+}
+#beranda .panel-kiri button:hover {
+  color: var(--coklat);
+  -webkit-text-stroke: 1px var(--coklat);
+  background-color: var(--putih);
+}
+
+#beranda .panel-kanan {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#beranda .panel-kanan img {
+  width: 70%;
+}
+
+#beranda .biji-kopi {
+  position: absolute;
+  background-image: url(aset/beranda/biji_kopi.jpg);
+  background-position: center;
+  background-size: cover;
+  top: 6em;
+  --size-kopi: 11em;
+  width: var(--size-kopi);
+  height: var(--size-kopi);
+  border-radius: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#beranda .biji-kopi::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0.3em;
+  border: 4px dashed var(--putih);
+}
+
+/* Responsif */
+@media (max-width: 1492px) {
+  nav.navbar {
+    padding: 1rem 5em;
+  }
+  #beranda .panel-kiri {
+    padding: 0 2em;
+  }
+  #beranda .biji-kopi {
+    --size-kopi: 7em;
+  }
+}
+@media (max-width: 1168px) {
+  nav.nabvar {
+    padding: 1rem 3em;
+  }
+  nav.navbar ul li a {
+    color: var(--putih);
+  }
+  #beranda .panel-kiri {
+    padding: 0 0.7em;
+  }
+  #beranda .panel-kiri h1 {
+    font-size: 4em;
+  }
+}
+@media (max-width: 694px) {
+  nav.navbar .menu i {
+    display: inline-block;
+  }
+  nav.navbar .menu ul {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: var(--putih);
+    width: 20rem;
+    height: 100vh;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 4em;
+    transition: 0.3s;
+  }
+  nav.navbar .menu ul.active {
+    right: 0;
+  }
+  nav.navbar .menu ul li a {
+    color: var(--coklat);
+  }
+  #beranda .biji-kopi,
+  #beranda .panel-kanan {
+    display: none;
+  }
+  #beranda {
+    display: block;
+  }
+  #beranda .panel-kiri {
+    gap: 2em;
+    height: 90vh;
+  }
+}
+
+/* Navbar */
+@media (min-width: 695px) {
+  nav.navbar ul li::before {
+    content: "";
+    z-index: -1;
+    background-color: var(--coklat);
+    position: absolute;
+    top: -2em;
+    right: -1em;
+    width: calc(100% + 2em);
+    height: calc(100% + 2.5em);
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: 0.5s;
+  }
+  nav.navbar ul li.active::before {
+    transform: scaleY(1);
+  }
+  nav.navbar ul li.active a {
+    color: var(--putih);
+  }
+  nav.navbar ul li.active a:hover {
+    -webkit-text-stroke-width: 0px;
+  }
+}
