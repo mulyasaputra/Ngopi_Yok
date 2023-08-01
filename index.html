@@ -16,6 +16,8 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="stylesheet" href="/vendor/OwlCarousel2/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="/vendor/OwlCarousel2/css/owl.theme.default.min.css" />
     <link rel="stylesheet" href="style.css" />
     <title>Ngopi Yok</title>
   </head>
@@ -48,6 +50,93 @@
       </div>
       <div class="biji-kopi"></div>
     </section>
+    <section id="section-promo">
+      <div class="owl-carousel owl-theme owl-loaded owl-drag">
+        <div class="promo"><img src="/aset/promo/Promo1.png" alt="Promo" /></div>
+        <div class="promo"><img src="/aset/promo/Promo2.png" alt="Promo" /></div>
+        <div class="promo"><img src="/aset/promo/Promo1.png" alt="Promo" /></div>
+      </div>
+    </section>
+    <section id="menu">
+      <div class="kategori">
+        <ul>
+          <li class="kategori_icon" style="--gambar: url(/aset/kategori/kopi.png)"><a href="#">Kopi</a></li>
+          <li class="kategori_icon" style="--gambar: url(/aset/kategori/vanila.png)"><a href="#">Vanila</a></li>
+          <li class="kategori_icon" style="--gambar: url(/aset/kategori/es-krim.png)"><a href="#">Es Krim</a></li>
+          <li class="kategori_icon" style="--gambar: url(/aset/kategori/gula-aren.png)">
+            <a href="#"
+              >Gula <br />
+              Aren</a
+            >
+          </li>
+          <li class="kategori_icon" style="--gambar: url(/aset/kategori/coklat.png)"><a href="#">Coklat</a></li>
+          <li class="kategori_icon" style="--gambar: url(/aset/kategori/soda.png)"><a href="#">Soda</a></li>
+          <li class="kategori_icon" style="--gambar: url(/aset/kategori/sirup.png)"><a href="#">Sirup</a></li>
+          <li class="kategori_icon" style="--gambar: url(/aset/kategori/lainnya.png)"><a href="#">Lainnya</a></li>
+        </ul>
+      </div>
+      <div class="menu">
+        <h2>Menu Kami</h2>
+        <img src="/aset/menu/bg-menu.png" alt="bg Menu" class="bg-menu" />
+        <div class="daftar-menu">
+          <div class="foto-menu" style="--nama-menu: 'Menu 1'"><img src="/aset/menu/menu1.png" alt="Foto_Menu" /></div>
+          <div class="foto-menu" style="--nama-menu: 'Menu 2'"><img src="/aset/menu/menu2.png" alt="Foto_Menu" /></div>
+          <div class="foto-menu" style="--nama-menu: 'Menu 3'"><img src="/aset/menu/menu3.png" alt="Foto_Menu" /></div>
+          <div class="foto-menu" style="--nama-menu: 'Menu 4'"><img src="/aset/menu/menu4.png" alt="Foto_Menu" /></div>
+          <div class="foto-menu" style="--nama-menu: 'Menu 5'"><img src="/aset/menu/menu5.png" alt="Foto_Menu" /></div>
+          <div class="foto-menu" style="--nama-menu: 'Menu 6'"><img src="/aset/menu/menu6.png" alt="Foto_Menu" /></div>
+          <div class="foto-menu" style="--nama-menu: 'Menu 7'"><img src="/aset/menu/menu7.png" alt="Foto_Menu" /></div>
+          <div class="foto-menu" style="--nama-menu: 'Menu 8'"><img src="/aset/menu/menu8.png" alt="Foto_Menu" /></div>
+          <div class="foto-menu" style="--nama-menu: 'Menu 9'"><img src="/aset/menu/menu9.png" alt="Foto_Menu" /></div>
+          <div class="foto-menu" style="--nama-menu: 'Menu 10'">
+            <img src="/aset/menu/menu10.png" alt="Foto_Menu" />
+          </div>
+          <div class="foto-menu" style="--nama-menu: 'Menu 11'">
+            <img src="/aset/menu/menu11.png" alt="Foto_Menu" />
+          </div>
+          <div class="foto-menu" style="--nama-menu: 'Menu 12'">
+            <img src="/aset/menu/menu12.png" alt="Foto_Menu" />
+          </div>
+          <div class="foto-menu" style="--nama-menu: 'Menu 13'">
+            <img src="/aset/menu/menu13.png" alt="Foto_Menu" />
+          </div>
+          <div class="foto-menu" style="--nama-menu: 'Menu 14'">
+            <img src="/aset/menu/menu14.png" alt="Foto_Menu" />
+          </div>
+          <div class="foto-menu" style="--nama-menu: 'Menu 15'">
+            <img src="/aset/menu/menu15.png" alt="Foto_Menu" />
+          </div>
+          <div class="foto-menu" style="--nama-menu: 'Menu 16'">
+            <img src="/aset/menu/menu16.png" alt="Foto_Menu" />
+          </div>
+          <div class="foto-menu" style="--nama-menu: 'Menu 17'">
+            <img src="/aset/menu/menu17.png" alt="Foto_Menu" />
+          </div>
+          <div class="foto-menu" style="--nama-menu: 'Menu 18'">
+            <img src="/aset/menu/menu18.png" alt="Foto_Menu" />
+          </div>
+        </div>
+      </div>
+    </section>
   </body>
   <script src="main.js"></script>
+  <script src="/vendor/jquery/jquery.min.js"></script>
+  <script src="/vendor/OwlCarousel2/js/owl.carousel.min.js"></script>
+  <script>
+    $(".owl-carousel").owlCarousel({
+      items: 1,
+      margin: 30,
+      loop: true,
+      autoplay: true,
+      autoplayTimeout: 2000,
+      autoplayHoverPause: true,
+      responsiveClass: true,
+      responsive: {
+        0: { stagePadding: 0 },
+        822: { stagePadding: 50 },
+        1208: { stagePadding: 110 },
+        1308: { stagePadding: 150 },
+      },
+    });
+  </script>
 </html>
